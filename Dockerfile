@@ -20,7 +20,7 @@ RUN npx update-browserslist-db@latest && \
 # Production stage
 FROM nginx:alpine
 
-# Install additional security packages
+# Install curl for healthcheck
 RUN apk add --no-cache curl
 
 # Copy custom nginx config
