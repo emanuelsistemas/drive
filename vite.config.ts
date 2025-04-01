@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
+    include: ['react', 'react-dom', '@supabase/supabase-js', 'react-toastify']
   },
   build: {
     sourcemap: false,
@@ -28,6 +29,14 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: 3000
+    port: 6002,
+    strictPort: true,
+    hmr: {
+      overlay: true
+    },
+    cors: true
+  },
+  resolve: {
+    dedupe: ['react', 'react-dom']
   }
 });
